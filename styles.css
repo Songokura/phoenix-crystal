@@ -493,3 +493,67 @@ section[id], [id="raschet"] { scroll-margin-top: 84px; }
   .svc-icon .draw, .cargo-glyph .draw { stroke-dashoffset: 0; }
   .ticker-track { animation: none !important; }
 }
+
+/* ═══════════ КИНОШНЫЕ ФОТО + АНИМАЦИЯ (добавлено Opus) ═══════════ */
+.hero { overflow: hidden; }
+.hero-photo { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.hero-photo img {
+  width: 100%; height: 100%; object-fit: cover; object-position: 50% 38%;
+  opacity: .9; animation: heroKen 28s ease-in-out infinite alternate;
+}
+@keyframes heroKen { from { transform: scale(1.08) } to { transform: scale(1.18) translateY(-2%) } }
+.hero-photo::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    radial-gradient(80% 62% at 50% 62%, rgba(7,6,4,.52), rgba(7,6,4,.1) 72%),
+    linear-gradient(180deg, rgba(7,6,4,.28) 0%, rgba(7,6,4,0) 32%, rgba(7,6,4,.34) 62%, var(--bg) 100%);
+}
+.hero-plane {
+  position: absolute; top: 18%; left: -18%; z-index: 1;
+  width: clamp(60px, 11vw, 130px); height: auto; color: var(--gold-hi);
+  opacity: .92; pointer-events: none; filter: drop-shadow(0 6px 20px rgba(0,0,0,.55));
+  transform: rotate(-6deg);
+  animation: planeFly 19s linear infinite;
+}
+@keyframes planeFly {
+  0%   { transform: translate(0,0) rotate(-6deg); opacity: 0 }
+  10%  { opacity: .92 }
+  90%  { opacity: .92 }
+  100% { transform: translate(138vw,-15vh) rotate(-6deg); opacity: 0 }
+}
+#skyCanvas { z-index: 1; mix-blend-mode: screen; }
+.hero-vignette { z-index: 2; }
+.hero-content { position: relative; z-index: 3; }
+
+/* Транспорт — фото в визуале вместо иконки */
+.svc-transport .svc-visual {
+  min-height: 210px; padding: 1rem; border-radius: 6px; overflow: hidden;
+  border: 1px solid rgba(201,162,75,.28);
+  box-shadow: 0 22px 55px rgba(0,0,0,.5);
+}
+.svc-transport .svc-icon { display: none; }
+.svc-photo {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; z-index: 0; transition: transform .9s ease;
+}
+.svc-transport:hover .svc-photo { transform: scale(1.05); }
+.svc-transport .svc-visual::before {
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(180deg, rgba(7,6,4,.08), rgba(7,6,4,.35) 45%, rgba(7,6,4,.85));
+}
+.svc-transport .svc-num { position: relative; z-index: 2; -webkit-text-stroke: 1.5px rgba(242,215,145,.6); }
+
+/* Cargo — фото-шапка карточки */
+.cargo-card { overflow: hidden; }
+.cargo-photo {
+  display: block; width: calc(100% + 3rem); height: 150px;
+  margin: -1.7rem -1.5rem 1.2rem; object-fit: cover;
+  border-bottom: 1px solid rgba(201,162,75,.22);
+}
+.cargo-card .cargo-glyph { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-photo img { animation: none; transform: scale(1.12) }
+  .hero-plane { animation: none; left: 66%; top: 16%; opacity: .85 }
+  .svc-photo { transition: none }
+}
