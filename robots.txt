@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ali-hub-01.github.io/phoenix-crystal/sitemap.xml
+Sitemap: https://songokura.github.io/phoenix-crystal/sitemap.xml

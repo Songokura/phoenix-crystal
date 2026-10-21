@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════
-   PHOENIX CRYSTAL — «Золотая трасса»
+   PHOENIX CRYSTAL - «Золотая трасса»
    Ванильный JS: канвас-феникс, scroll-маршрут,
    reveal-анимации, меню, форма → WhatsApp
    ═══════════════════════════════════════════════ */
@@ -38,7 +38,7 @@
     if (e.key === "Escape") toggleMenu(false);
   });
 
-  /* ── H1: пословное появление (WAAPI — текст виден всегда) ── */
+  /* ── H1: пословное появление (WAAPI - текст виден всегда) ── */
   var h1 = document.getElementById("heroTitle");
   if (h1 && !reduceMotion && "animate" in document.body) {
     var words = h1.textContent.trim().split(/\s+/);
@@ -152,7 +152,7 @@
     }
 
     function buildWorld() {
-      // «города» — детерминированная россыпь точек-нод
+      // «города» - детерминированная россыпь точек-нод
       var pts = [
         [0.12, 0.30], [0.32, 0.62], [0.50, 0.24], [0.68, 0.58],
         [0.86, 0.30], [0.72, 0.14], [0.26, 0.14], [0.90, 0.66],
@@ -273,7 +273,7 @@
       for (i = particles.length - 1; i >= 0; i--) {
         var p = particles[i];
         p.x += p.vx; p.y += p.vy;
-        p.vy -= 0.004; // лёгкий подъём — пламя
+        p.vy -= 0.004; // лёгкий подъём - пламя
         p.life -= p.decay;
         if (p.life <= 0) { particles.splice(i, 1); continue; }
         var lr = p.life;
@@ -285,7 +285,7 @@
       }
       ctx.globalAlpha = 1;
 
-      // голова кометы — золотое ядро со свечением
+      // голова кометы - золотое ядро со свечением
       var glow = ctx.createRadialGradient(pos.x, pos.y, 0, pos.x, pos.y, 26);
       glow.addColorStop(0, "rgba(255,240,200,.9)");
       glow.addColorStop(0.25, "rgba(242,215,145,.55)");
@@ -332,11 +332,10 @@
       e.preventDefault();
       var d = new FormData(form);
       var msg = "Здравствуйте! Хочу рассчитать доставку.\n" +
-        "Откуда: " + (d.get("from") || "—") + "\n" +
-        "Куда: " + (d.get("to") || "—") + "\n" +
-        "Груз: " + (d.get("cargo") || "—") + "\n" +
-        "Телефон: " + (d.get("phone") || "—");
-      /* TODO: заменить контакты (номер WhatsApp) */
+        "Откуда: " + (d.get("from") || "-") + "\n" +
+        "Куда: " + (d.get("to") || "-") + "\n" +
+        "Груз: " + (d.get("cargo") || "-") + "\n" +
+        "Телефон: " + (d.get("phone") || "-");
       window.open("https://wa.me/70000000000?text=" + encodeURIComponent(msg), "_blank", "noopener");
     });
   }

@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════
-   PHOENIX CRYSTAL — «Золотая трасса»
+   PHOENIX CRYSTAL - «Золотая трасса»
    Mobile-first · чёрный + золото · премиум-логистика
    ═══════════════════════════════════════════════════ */
 
@@ -299,14 +299,6 @@ section[id], [id="raschet"] { scroll-margin-top: 84px; }
 }
 
 .svc-visual { position: relative; display: flex; align-items: flex-end; gap: 1rem; min-height: 84px; }
-.svc-num {
-  font-size: clamp(3.4rem, 12vw, 5rem);
-  font-weight: 800;
-  line-height: .8;
-  color: transparent;
-  -webkit-text-stroke: 1.5px rgba(201,162,75,.4);
-  user-select: none;
-}
 .svc-icon { width: clamp(100px, 30vw, 150px); color: var(--gold-hi); overflow: visible; }
 .svc-icon .draw {
   stroke-dasharray: 100;
@@ -494,7 +486,7 @@ section[id], [id="raschet"] { scroll-margin-top: 84px; }
   .ticker-track { animation: none !important; }
 }
 
-/* ═══════════ КИНОШНЫЕ ФОТО + АНИМАЦИЯ (добавлено Opus) ═══════════ */
+/* ═══════════ КИНОШНЫЕ ФОТО + АНИМАЦИЯ ═══════════ */
 .hero { overflow: hidden; }
 .hero-photo { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
 .hero-photo img {
@@ -525,7 +517,7 @@ section[id], [id="raschet"] { scroll-margin-top: 84px; }
 .hero-vignette { z-index: 2; }
 .hero-content { position: relative; z-index: 3; }
 
-/* Транспорт — фото в визуале вместо иконки */
+/* Транспорт - фото в визуале вместо иконки */
 .svc-transport .svc-visual {
   min-height: 210px; padding: 1rem; border-radius: 6px; overflow: hidden;
   border: 1px solid rgba(201,162,75,.28);
@@ -541,9 +533,8 @@ section[id], [id="raschet"] { scroll-margin-top: 84px; }
   content: ""; position: absolute; inset: 0; z-index: 1;
   background: linear-gradient(180deg, rgba(7,6,4,.08), rgba(7,6,4,.35) 45%, rgba(7,6,4,.85));
 }
-.svc-transport .svc-num { position: relative; z-index: 2; -webkit-text-stroke: 1.5px rgba(242,215,145,.6); }
 
-/* Cargo — фото-шапка карточки */
+/* Cargo - фото-шапка карточки */
 .cargo-card { overflow: hidden; }
 .cargo-photo {
   display: block; width: calc(100% + 3rem); height: 150px;
@@ -556,4 +547,31 @@ section[id], [id="raschet"] { scroll-margin-top: 84px; }
   .hero-photo img { animation: none; transform: scale(1.12) }
   .hero-plane { animation: none; left: 66%; top: 16%; opacity: .85 }
   .svc-photo { transition: none }
+}
+
+/* ── Шапка на узких экранах ── */
+.brand, .menu-btn { flex-shrink: 0; }
+.topbar-right { margin-left: auto; }
+.contact-wa { display: inline-flex; align-items: center; gap: .45rem; }
+.contact-wa svg, .mbar svg { display: block; flex: 0 0 auto; }
+
+/* ── Липкая панель «Позвонить / WhatsApp» (мобильный) ── */
+.mbar { display: none; }
+@media (max-width: 759px) {
+  .topbar .btn-small { display: none; }
+  .mbar {
+    position: fixed; inset: auto 0 0 0; z-index: 45;
+    display: grid; grid-template-columns: 1fr 1fr; gap: .5rem;
+    padding: .55rem .75rem calc(.55rem + env(safe-area-inset-bottom));
+    background: rgba(7, 6, 4, .94);
+    border-top: 1px solid rgba(201, 162, 75, .25);
+  }
+  .mbar a {
+    display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+    min-height: 46px; border-radius: 999px;
+    font-weight: 600; font-size: .95rem; text-decoration: none;
+  }
+  .mbar-call { color: var(--gold-hi); box-shadow: inset 0 0 0 1px rgba(201, 162, 75, .45); background: rgba(201, 162, 75, .06); }
+  .mbar-wa { color: #1a1408; background: linear-gradient(135deg, var(--gold-hi), var(--gold)); }
+  .footer { padding-bottom: calc(2.6rem + 70px + env(safe-area-inset-bottom)); }
 }
