@@ -336,7 +336,7 @@
         "Куда: " + (d.get("to") || "-") + "\n" +
         "Груз: " + (d.get("cargo") || "-") + "\n" +
         "Телефон: " + (d.get("phone") || "-");
-      window.open("https://wa.me/70000000000?text=" + encodeURIComponent(msg), "_blank", "noopener");
+      window.open("https://wa.me/77478765598?text=" + encodeURIComponent(msg), "_blank", "noopener");
     });
   }
 })();
