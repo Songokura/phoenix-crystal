@@ -197,6 +197,9 @@ section[id], [id="raschet"] { scroll-margin-top: 84px; }
 }
 .gold-line { width: clamp(20px, 6vw, 44px); height: 1px; background: linear-gradient(90deg, transparent, var(--gold)); display: inline-block; }
 .gold-line:last-child { background: linear-gradient(270deg, transparent, var(--gold)); }
+@media (max-width: 420px) {
+  .hero-sub { letter-spacing: .26em; gap: .6rem; }
+}
 
 .hero-note { margin-top: .9rem; color: var(--ink-dim); font-size: .95rem; }
 .hero-cta { margin-top: 2rem; display: flex; gap: .8rem; justify-content: center; flex-wrap: wrap; }
@@ -497,8 +500,8 @@ section[id], [id="raschet"] { scroll-margin-top: 84px; }
 .hero-photo::after {
   content: ""; position: absolute; inset: 0;
   background:
-    radial-gradient(80% 62% at 50% 62%, rgba(7,6,4,.52), rgba(7,6,4,.1) 72%),
-    linear-gradient(180deg, rgba(7,6,4,.28) 0%, rgba(7,6,4,0) 32%, rgba(7,6,4,.34) 62%, var(--bg) 100%);
+    radial-gradient(70% 56% at 50% 48%, rgba(7,6,4,.72), rgba(7,6,4,.38) 60%, rgba(7,6,4,.12) 85%),
+    linear-gradient(180deg, rgba(7,6,4,.42) 0%, rgba(7,6,4,.18) 30%, rgba(7,6,4,.3) 62%, var(--bg) 100%);
 }
 .hero-plane {
   position: absolute; top: 18%; left: -18%; z-index: 1;
