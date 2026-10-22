@@ -537,7 +537,7 @@ section[id], [id="raschet"] { scroll-margin-top: 84px; }
 /* Cargo - фото-шапка карточки */
 .cargo-card { overflow: hidden; }
 .cargo-photo {
-  display: block; width: calc(100% + 3rem); height: 150px;
+  display: block; width: calc(100% + 3rem); max-width: none; height: 150px;
   margin: -1.7rem -1.5rem 1.2rem; object-fit: cover;
   border-bottom: 1px solid rgba(201,162,75,.22);
 }
