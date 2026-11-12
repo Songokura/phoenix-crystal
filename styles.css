@@ -738,3 +738,7 @@ section[id], [id="raschet"] { scroll-margin-top: 84px; }
   .fleet-card:last-child:nth-child(odd) .fleet-photo { aspect-ratio: 16 / 9; }
 }
 .more + .svc-link { margin-top: .3rem; }
+/* Доп. услуги - фото-шапка вместо значка (12.11.2026) */
+.dop-card { overflow: hidden; }
+.dop-card .dop-photo { height: 190px; }
+.dop-card .dop-glyph { display: none; }
