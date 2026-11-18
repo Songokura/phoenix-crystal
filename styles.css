@@ -756,3 +756,7 @@ section[id], [id="raschet"] { scroll-margin-top: 84px; }
   .hero-sub { margin-top: clamp(.6rem, 2svh, 1.1rem); }
   .hero-cta { margin-top: clamp(1.1rem, 3.5svh, 2rem); }
 }
+
+/* Градиент через background-clip:text не рисует хвосты букв (у, д, р) ниже блока h1 - даём им место */
+.hero-title { padding: .06em .04em .2em; margin-bottom: -.2em; }
+.hero-title .w { padding-bottom: .12em; margin-bottom: -.12em; }
