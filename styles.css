@@ -742,3 +742,17 @@ section[id], [id="raschet"] { scroll-margin-top: 84px; }
 .dop-card { overflow: hidden; }
 .dop-card .dop-photo { height: 190px; }
 .dop-card .dop-glyph { display: none; }
+
+/* ── Герой в низком окне (ноутбук с масштабом Windows): логотип, заголовок и кнопки целиком в первый экран ── */
+.hero-content { padding: calc(65px + clamp(.75rem, 4.5vh, 2.6rem)) 1.4rem clamp(2.6rem, 8vh, 4.4rem); }
+.hero-logo { width: clamp(72px, min(30vw, 19vh), 160px); margin-bottom: clamp(.5rem, 2vh, 1.2rem); }
+.hero-title { font-size: clamp(2rem, min(8.5vw, 9.5vh), 4.4rem); }
+.hero-sub { margin-top: clamp(.6rem, 2vh, 1.1rem); }
+.hero-cta { margin-top: clamp(1.1rem, 3.5vh, 2rem); }
+@supports (height: 1svh) {
+  .hero-content { padding: calc(65px + clamp(.75rem, 4.5svh, 2.6rem)) 1.4rem clamp(2.6rem, 8svh, 4.4rem); }
+  .hero-logo { width: clamp(72px, min(30vw, 19svh), 160px); margin-bottom: clamp(.5rem, 2svh, 1.2rem); }
+  .hero-title { font-size: clamp(2rem, min(8.5vw, 9.5svh), 4.4rem); }
+  .hero-sub { margin-top: clamp(.6rem, 2svh, 1.1rem); }
+  .hero-cta { margin-top: clamp(1.1rem, 3.5svh, 2rem); }
+}
